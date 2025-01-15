@@ -1,19 +1,11 @@
 ﻿using UnityEngine;
-using Movement;
-using System;
-
 
 namespace Combat.Armors
 {
-
-    [Serializable]
-    public sealed class LegsArmor: Armor
+    public sealed class LegsArmor: MonoBehaviour
     {
-
-        public override ArmorType Type => ArmorType.Legs;
-
-
-        [Space]
-        public MovementSettings Movement;
+        
+        [SerializeField, Space]
+        private LegsArmorStats _stats;
     }
 }

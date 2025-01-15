@@ -5,7 +5,7 @@ namespace Movement
 {
 
     [Serializable]
-    public struct MovementSettings
+    public struct MovementStats
     {
 
         [Space]

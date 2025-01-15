@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c93bd1d57f128e4b885a57d53fc66ad, type: 3}
-  m_Name: New Health Settings
+  m_Script: {fileID: 11500000, guid: 1c9f4170161b0e345aa87ecdc3d1afd9, type: 3}
+  m_Name: Health
   m_EditorClassIdentifier: 
-  <Settings>k__BackingField:
-    MaxHp: 1
+  <MaxHp>k__BackingField: 10

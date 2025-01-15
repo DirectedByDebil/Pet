@@ -11,7 +11,7 @@ namespace Characters
 
         public Rigidbody2D Rigidbody { get; private set; }
 
-        public MovementSettings Movement {  get; private set; }
+        public MovementStats Movement {  get; private set; }
 
 
         [SerializeField, Space]
@@ -19,7 +19,7 @@ namespace Characters
 
 
         [SerializeField, Space]
-        private HealthPreset _baseHealth;
+        private HealthStats _baseHealth;
 
 
 
@@ -30,7 +30,7 @@ namespace Characters
         }
 
 
-        public void Construct(MovementSettings bonusMovement)
+        public void Construct(MovementStats bonusMovement)
         {
             
             //Movement = movement + _baseMovement.Settings;

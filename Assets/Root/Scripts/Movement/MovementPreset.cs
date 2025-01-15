@@ -9,6 +9,6 @@ namespace Movement
     {
 
         [field: SerializeField, Space]
-        public MovementSettings Settings { get; private set; }
+        public MovementStats Settings { get; private set; }
     }
 }

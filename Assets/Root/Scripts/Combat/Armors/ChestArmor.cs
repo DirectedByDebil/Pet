@@ -1,30 +1,13 @@
 ﻿using UnityEngine;
-using Movement;
-using Inventories;
-using Characters;
-using System;
 
 namespace Combat.Armors
 {
-    [Serializable]
-    public sealed class ChestArmor : Armor
+
+    public sealed class ChestArmor : MonoBehaviour
     {
 
-        public override ArmorType Type => ArmorType.Chest;
+        [SerializeField, Space]
+        private ChestArmorStats _stats;
 
-
-        [Space]
-        public Fractions Fraction;
-        
-        [Space]
-        public InventorySize InventorySize;
-
-
-        [Range(1, 100), Space]
-        public int MaxArmorHp;
-
-
-        [Space]
-        public MovementSettings Movement;
     }
 }

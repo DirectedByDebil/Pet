@@ -13,6 +13,10 @@ namespace Combat.Armors
 
 
         [field: SerializeField, Space]
-        public MovementStats Movement { get; private set; }
+        public MovementSpeed Speed { get; private set; }
+
+
+        [field: SerializeField, Space]
+        public MovementVolume Volume { get; private set; }
     }
 }

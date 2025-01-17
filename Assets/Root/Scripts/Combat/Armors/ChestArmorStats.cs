@@ -25,9 +25,5 @@ namespace Combat.Armors
 
         [field: SerializeField, Range(1, 100), Space]
         public int MaxArmorHp { get; private set; }
-
-
-        [field: SerializeField, Space]
-        public MovementStats Movement { get; private set; }
     }
 }

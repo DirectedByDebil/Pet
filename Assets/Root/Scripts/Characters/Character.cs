@@ -1,39 +1,34 @@
 using UnityEngine;
 using Movement;
 using Combat;
+using Combat.Armors;
 
 namespace Characters
 {
 
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, ICharacter
     {
 
         public Rigidbody2D Rigidbody { get; private set; }
 
-        public MovementStats Movement {  get; private set; }
+
+        [field: SerializeField, Space]
+        public MovementStats BaseMovement { get; private set; }
 
 
-        [SerializeField, Space]
-        private MovementPreset _baseMovement;
+        [field: SerializeField, Space]
+        public HealthStats BaseHealth { get; private set; }
 
 
-        [SerializeField, Space]
-        private HealthStats _baseHealth;
-
+        [field: SerializeField, Space]
+        public ArmorSet ArmorSet {  get; private set; }
 
 
         private void OnValidate()
         {
-            
+
             Rigidbody = GetComponent<Rigidbody2D>();
-        }
-
-
-        public void Construct(MovementStats bonusMovement)
-        {
-            
-            //Movement = movement + _baseMovement.Settings;
         }
     }
 }

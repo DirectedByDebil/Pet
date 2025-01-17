@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da0effd123b267498370c3f3937ba1f, type: 3}
   m_Name: Legs
   m_EditorClassIdentifier: 
-  <Movement>k__BackingField:
-    Speed:
-      Crouch: 7
-      Walk: 8
-      Sprint: 9
-    Volume:
-      Crouch: 10
-      Walk: 11
-      Sprint: 12
+  <Speed>k__BackingField:
+    Crouch: 5
+    Walk: 7
+    Sprint: 9
+  <Volume>k__BackingField:
+    Crouch: 6
+    Walk: 11
+    Sprint: 16

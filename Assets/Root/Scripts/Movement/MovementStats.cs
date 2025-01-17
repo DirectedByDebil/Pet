@@ -1,19 +1,18 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Movement
 {
+    [CreateAssetMenu(fileName = "New Movement Stats",
+        menuName = "Characters/Movement Stats", order = 1)]
 
-    [Serializable]
-    public struct MovementStats
+    public sealed class MovementStats : ScriptableObject, IMovementStats
     {
 
-        [Space]
-        public MovementSpeed Speed;
+        [field: SerializeField, Space]
+        public MovementSpeed Speed { get; private set; }
 
 
-        [Space]
-        public MovementVolume Volume;
-
+        [field: SerializeField, Space]
+        public MovementVolume Volume { get; private set; }
     }
 }

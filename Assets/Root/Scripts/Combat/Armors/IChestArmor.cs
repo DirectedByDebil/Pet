@@ -1,6 +1,5 @@
 ﻿using Characters;
 using Inventories;
-using Movement;
 
 namespace Combat.Armors
 {
@@ -13,7 +12,5 @@ namespace Combat.Armors
 
 
         public int MaxArmorHp { get; }
-
-        public MovementStats Movement { get; }
     }
 }

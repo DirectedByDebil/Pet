@@ -14,7 +14,6 @@ namespace Core
         {
 
             Character character = GetComponent<Character>();
-
         }
 
     }

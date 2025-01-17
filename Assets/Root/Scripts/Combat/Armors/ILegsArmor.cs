@@ -2,13 +2,8 @@
 
 namespace Combat.Armors
 {
-    public interface ILegsArmor : IArmor
+    public interface ILegsArmor : IArmor, IMovementStats
     {
 
-        public MovementStats Movement { get; }
-
-
-        //#TODO maybe bool HasArmorBonus
-        //#TODO maybe add armor hp
     }
 }

@@ -650,8 +650,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d46bd135a5d1c4cab06ea828eb953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseMovement: {fileID: 11400000, guid: 18690e24ef7c32e4a9aa5c4f55a24fb3, type: 2}
-  _baseHealth: {fileID: 11400000, guid: d173bf9b5e0f5cb429dfc1f011c666b2, type: 2}
+  <BaseMovement>k__BackingField: {fileID: 11400000, guid: 18690e24ef7c32e4a9aa5c4f55a24fb3, type: 2}
+  <BaseHealth>k__BackingField: {fileID: 11400000, guid: d173bf9b5e0f5cb429dfc1f011c666b2, type: 2}
+  <ArmorSet>k__BackingField:
+    <HeadGadget>k__BackingField: {fileID: 0}
+    <ChestArmor>k__BackingField: {fileID: 0}
+    <LegsArmor>k__BackingField: {fileID: 0}
 --- !u!50 &2028312527
 Rigidbody2D:
   serializedVersion: 5

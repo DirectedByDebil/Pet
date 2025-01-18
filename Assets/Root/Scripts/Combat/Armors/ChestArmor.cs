@@ -6,8 +6,8 @@ namespace Combat.Armors
     public sealed class ChestArmor : MonoBehaviour
     {
 
-        [SerializeField, Space]
-        private ChestArmorStats _stats;
+        [field: SerializeField, Space]
+        public ChestArmorStats Stats { get; private set; }
 
     }
 }

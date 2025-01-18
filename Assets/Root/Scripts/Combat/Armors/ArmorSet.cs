@@ -8,15 +8,49 @@ namespace Combat.Armors
     public sealed class ArmorSet
     {
 
-        [field: SerializeField, Space]
-        public HeadGadget HeadGadget { get; private set; }
+        [SerializeField, Space]
+        private HeadGadget _headGadget;
 
 
-        [field: SerializeField, Space]
-        public ChestArmor ChestArmor { get; private set; }
+        [SerializeField, Space]
+        private ChestArmor _chestArmor;
 
 
-        [field: SerializeField, Space]
-        public LegsArmor LegsArmor {  get; private set; }
+        [SerializeField, Space]
+        private LegsArmor _legsArmor;
+
+
+        public bool TryGetChest(out IChestArmor armor)
+        {
+
+            if(_chestArmor)
+            {
+
+                armor = _chestArmor.Stats;
+
+                return true;
+            }
+
+            armor = null;
+
+            return false;
+        }
+
+
+        public bool TryGetLegs(out ILegsArmor armor)
+        {
+
+            if (_legsArmor)
+            {
+
+                armor = _legsArmor.Stats;
+
+                return true;
+            }
+
+            armor = null;
+
+            return false;
+        }
     }
 }

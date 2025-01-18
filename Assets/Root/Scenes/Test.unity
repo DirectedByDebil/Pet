@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 1.8425443, y: -0.15075207, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -653,9 +653,9 @@ MonoBehaviour:
   <BaseMovement>k__BackingField: {fileID: 11400000, guid: 18690e24ef7c32e4a9aa5c4f55a24fb3, type: 2}
   <BaseHealth>k__BackingField: {fileID: 11400000, guid: d173bf9b5e0f5cb429dfc1f011c666b2, type: 2}
   <ArmorSet>k__BackingField:
-    <HeadGadget>k__BackingField: {fileID: 0}
-    <ChestArmor>k__BackingField: {fileID: 0}
-    <LegsArmor>k__BackingField: {fileID: 0}
+    _headGadget: {fileID: 0}
+    _chestArmor: {fileID: 0}
+    _legsArmor: {fileID: 0}
 --- !u!50 &2028312527
 Rigidbody2D:
   serializedVersion: 5

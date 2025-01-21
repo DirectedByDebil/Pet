@@ -4,10 +4,10 @@
     public enum InventorySize
     {
 
-        Small,
+        Small = 10,
 
-        Medium,
+        Medium = 20,
 
-        Large
+        Large = 30
     }
 }

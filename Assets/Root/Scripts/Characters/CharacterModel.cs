@@ -1,5 +1,5 @@
-﻿using Movement;
-using Combat.Armors;
+﻿using Combat;
+using Movement;
 using Inventories;
 
 namespace Characters
@@ -7,108 +7,62 @@ namespace Characters
     public sealed class CharacterModel
     {
 
-        #region Hp/Armor Hp
+        public CharacterMovement Movement { get => _movement; }
 
-        public int Hp { get; private set; }
+        public Inventory Inventory { get => _inventory; }
 
-        public int ArmorHp { get; private set; }
+        public CombatModel Combat { get => _combat; }
 
-        #endregion
-
-
-        public InventorySize InventorySize { get; private set; }
+        public CharacterFractions Fractions { get => _fractions; }
 
 
-        #region Total Speed/Volume
+        private readonly CharacterMovement _movement;
 
-        public MovementSpeed TotalSpeed { get; private set; }
-        
-        public MovementVolume TotalVolume { get; private set; }
+        private readonly Inventory _inventory;
 
-        #endregion
+        private readonly CombatModel _combat;
 
-
-        private readonly ICharacter _character;
-
+        private readonly CharacterFractions _fractions;
 
 
         public CharacterModel(ICharacter character)
         {
 
-            _character = character;
+            _movement = new CharacterMovement(character.BaseMovement);
 
+            _inventory = new Inventory();
 
-            UseBaseStats();
+            _combat = new CombatModel(character.BaseHealth);
 
-            AddArmorStats();
+            _fractions = new CharacterFractions();
         }
 
 
-        #region Base Stats
-
-        private void UseBaseStats()
+        public void SetModel()
         {
 
-            Hp = _character.BaseHealth.MaxHp;    
+            _inventory.MovementChanged += _movement.OnMovementChanged;
 
-            SetBaseMovement();
+            _inventory.ArmorHpChanged += _combat.OnArmorChanged;
+
+            _inventory.VisibleFractionChanged += _fractions.OnVisibleFractionChanged;
+
+
+            _combat.ArmorHPChanged += _inventory.OnArmorHpChanged;
         }
 
 
-        private void SetBaseMovement()
+        public void UnsetModel()
         {
 
-            TotalSpeed = _character.BaseMovement.Speed;
+            _inventory.MovementChanged -= _movement.OnMovementChanged;
 
-            TotalVolume = _character.BaseMovement.Volume;
+            _inventory.ArmorHpChanged -= _combat.OnArmorChanged;
+
+            _inventory.VisibleFractionChanged -= _fractions.OnVisibleFractionChanged;
+
+
+            _combat.ArmorHPChanged -= _inventory.OnArmorHpChanged;
         }
-
-        #endregion
-
-
-        #region Use Armor Stats
-
-        private void AddArmorStats()
-        {
-
-            UpdateChestArmor();
-
-            TryUseLegsArmor();
-        }
-
-
-        private void UpdateChestArmor()
-        {
-
-            if (_character.ArmorSet.TryGetChest(out IChestArmor chest))
-            {
-
-                InventorySize = chest.InventorySize;
-
-                ArmorHp = chest.MaxArmorHp;
-            }
-            else
-            {
-
-                InventorySize = InventorySize.Small;
-
-                ArmorHp = 0;
-            }
-        }
-
-
-        private void TryUseLegsArmor()
-        {
-
-            if(_character.ArmorSet.TryGetLegs(out ILegsArmor legs))
-            {
-
-                TotalSpeed += legs.Speed;
-
-                TotalVolume += legs.Volume;
-            }
-        }
-        
-        #endregion
     }
 }
